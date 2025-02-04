@@ -23,9 +23,7 @@ app.post('/send-email', upload.any(), async (req, res) => {
         ? JSON.parse(req.body.credinitals)
         : req.body.credinitals;
 
-    console.log("Recipients:", recipients);
-    console.log("Subject:", subject);
-    console.log("Content:", content);
+    
     console.log("Credentials:", credinitals);
 
     const attachments = req.files?.map((file) => ({
