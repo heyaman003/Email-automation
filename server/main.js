@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 const {sendEmailVerification}=require('./Email_logic/EmailSender');
 
-app.get('/',(req,res)=>{
-    res.send("Hello World");  
+app.get('/email-automation/api/',(req,res)=>{
+    res.json({msg:"hello ji"});  
 })
 
-app.post('/send-email', upload.any(), async (req, res) => {
+app.post('/email-automation/api/send-email', upload.any(), async (req, res) => {
     const recipients = JSON.parse(req.body.recipients);
     const subject = req.body.subject;
     const content = req.body.content;
