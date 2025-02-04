@@ -64,5 +64,5 @@ app.post('/automation/send-email', upload.any(), async (req, res) => {
 
 
 app.listen(8700,()=>{    
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port 8700 thsi time");
 })
