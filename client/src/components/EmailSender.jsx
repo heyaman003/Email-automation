@@ -135,7 +135,7 @@ export default function EmailSender() {
     // }
     console.log("The form data is", formData);
     try {
-      const response = await fetch("/email-automation/send-email", {
+      const response = await fetch("/email-automation/api/send-email", {
         method: "POST",
         body: formData,
       });
