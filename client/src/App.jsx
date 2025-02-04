@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Button } from "./Components/ui/button"
+import { Button } from "./components/ui/button"
 import EmailSender from './components/EmailSender';
 import LoginForm from './components/Forms/Loginform';
 function App() {
