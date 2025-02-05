@@ -76,11 +76,16 @@ export default function EmailSender() {
             const jsonData = XLSX.utils.sheet_to_json(sheet, { defval: '' }); // Use defval to handle undefined cells
             console.log("Parsed JSON data:", jsonData);
 
-            // Ensure columns are being read properly
-            const recipientsFromExcel = jsonData.map((row) => ({
-                name: row.Name?.trim(),      // Use optional chaining and trim whitespace
-                email: row.Email?.trim()     // Use optional chaining and trim whitespace
-            }));
+            const recipientsFromExcel = jsonData.map((row) => {
+              const values = Object.values(row); // Extract all values from the row
+              return {
+                  name: values[0]?.toString().trim(),  // First value as Name
+                  email: values[1]?.toString().trim()  // Second value as Email
+              };
+          });
+          
+          console.log("Recipients from Excel:", recipientsFromExcel);
+          
 
             console.log("Recipients from Excel:", recipientsFromExcel);
             
